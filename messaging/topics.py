@@ -1,0 +1,1 @@
+USER_SIGNUP_TOPIC = "test"
