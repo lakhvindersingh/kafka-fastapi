@@ -1,1 +1,1 @@
-USER_SIGNUP_TOPIC = "test"
+USER_SIGNUP_TOPIC = "user-signup"

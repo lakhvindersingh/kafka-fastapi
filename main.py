@@ -7,6 +7,10 @@ def create_app() -> FastAPI:
 
     app.include_router(router)
 
+    @app.get("/")
+    def read_root():
+        return {"message": "Kafka FastAPI App is running!", "docs_url": "/docs"}
+
     return app
 
 app = create_app()

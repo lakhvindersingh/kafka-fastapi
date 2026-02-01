@@ -10,6 +10,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(level
 logger = logging.getLogger(__name__)
 
 # Initialize Broker with settings
+logger.info(f"Attempting to connect to Kafka Broker at: {settings.KAFKA_BOOTSTRAP_SERVERS}")
 broker = KafkaBroker(settings.KAFKA_BOOTSTRAP_SERVERS)
 
 # Initialize FastStream App

@@ -147,3 +147,16 @@ For a production-ready setup, use Docker Compose to orchestrate the application,
 
 4.  **Error Handling**: Always implement a retry mechanism with exponential backoff for failed messages.
 
+## 📈 Scaling Kafka
+
+To scale the consumers, we use **Kafka Partitions** + **Consumer Groups**.
+We have configured the `user-signup` topic to have **3 partitions** (see `docker-compose.yml` -> `init-kafka`).
+
+This means we can run up to **3 worker instances** in parallel, and Kafka will load-balance the messages between them.
+
+**To Scale Workers:**
+```bash
+docker-compose up -d --scale worker=3
+```
+You will see 3 consumers processing messages simultaneously. If one fails, the others take over.
+
