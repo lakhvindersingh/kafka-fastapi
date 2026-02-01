@@ -2,3 +2,5 @@ kafka-python
 fastapi
 uvicorn
 pydantic-settings
+faststream[kafka]
+faststream[cli]

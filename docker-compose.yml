@@ -37,7 +37,7 @@ services:
 
   worker:
     build: .
-    command: python -m messaging.consumer
+    command: faststream run worker.main:app
     volumes:
       - .:/app
     depends_on:

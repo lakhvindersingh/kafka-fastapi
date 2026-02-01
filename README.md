@@ -87,13 +87,15 @@ curl -X 'POST' \
 }'
 ```
 
-## Running Consumers
+## Running Consumers (Production Ready)
 
-To consume messages from the topic, run the consumer module in a separate terminal:
+We use **FastStream** for the consumer worker. To run it locally:
 
 ```bash
-python -m messaging.consumer
+faststream run worker.main:app
 ```
+
+This starts a high-performance, async consumer that automatically validates incoming messages against the `UserSignupEvent` schema.
 
 ## 🐳 Docker Deployment (Recommended for Production)
 
